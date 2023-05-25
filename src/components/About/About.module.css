@@ -1,0 +1,9 @@
+.aboutMe h1 {
+    color: #08BAE3;
+    -webkit-text-stroke: 0.05em black;
+}
+
+.aboutMe h5 {
+    color: #97ce4c;
+    -webkit-text-stroke: 0.05em black;
+}

@@ -1,0 +1,28 @@
+.totalDetail {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.detailImg, .detailInfo {
+    width: 50%;
+    justify-content: center;
+    margin: 5% 0;
+}
+
+.detailInfo h1 {
+    font-family: Arial, sans-serif;
+    font-size: 48px;
+    color: #08BAE3;
+    -webkit-text-stroke: 0.05em black;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.detailInfo h2 {
+    font-size: 24px;
+    color: #97ce4c;
+    -webkit-text-stroke: 0.05em black;
+}

@@ -1,0 +1,16 @@
+.bar {
+    padding: 10px 0;
+    background-color: gray;
+    display: flex;
+}
+.bar button {
+    border-radius: 2rem;
+    color: whitesmoke;
+    background-color: darkslategray;
+    box-shadow: 0 5px 5px black;
+    &:hover {
+        color: darkslategray;
+        background-color: whitesmoke;
+        box-shadow: 0 5px 5px white;
+    }
+}

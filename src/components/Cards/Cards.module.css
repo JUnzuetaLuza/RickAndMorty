@@ -1,0 +1,9 @@
+.cardsAll {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cardNew {
+    width: 20%;
+}

@@ -1,0 +1,30 @@
+.container {
+    color: white;
+    background-color: gray;
+    border-radius: 2rem;
+    padding: 50px;
+    margin: 50px;
+}
+
+.container input {
+    border-radius: 2rem;
+    height: 25px;
+    margin: auto;
+    display: block;
+}
+
+.container button {
+    border-radius: 2rem;
+    color: whitesmoke;
+    background-color: darkslategray;
+    box-shadow: 0 5px 5px black;
+    &:hover {
+        color: darkslategray;
+        background-color: whitesmoke;
+        box-shadow: 0 5px 5px white;
+    }
+}
+
+.error {
+    color: red;
+  }

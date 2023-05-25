@@ -1,0 +1,62 @@
+.cardTotal {
+  margin: 5%;
+  align-items: end;
+
+}
+
+.card {
+  width: 250px;
+  height: 250px;
+  perspective: 800px;
+  margin: 1%;
+}
+
+.card:hover .divCard {
+  transform: rotateY(180deg) rotateZ(180deg);
+}
+
+.divCard {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s linear;
+}
+.cardFront, .cardBack {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position: absolute;
+}
+.cardFront {
+  position: absolute;
+}
+
+.cardBack {
+  background-image: url("https://cdna.artstation.com/p/assets/images/images/031/538/850/original/petro-kosariekov-portal-gun-rick-and-morty2-2.gif?1603902186");
+  background-size: cover;
+  transform: rotateY(180deg) rotateZ(180deg);
+}
+
+.cardFront img {
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+}
+
+.hName {
+    font-size: 20px;
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    background-color: #fcff4f;
+    padding: 0% 5%;
+}
+
+.buttonClose {
+    cursor: pointer;
+    background-color: red;
+    border-radius: 2rem;
+}
