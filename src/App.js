@@ -19,10 +19,14 @@ function App() {
    const EMAIL = "ft38b@gmail.com";
    const PASSWORD = "326159487";
 
-   function login(userData) {
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAccess(true);
-         navigate('/home');
+   async function login(userData) {
+      try{
+         if (userData.password === PASSWORD && userData.email === EMAIL) {
+            setAccess(true);
+            await navigate('/home');
+         }
+      } catch (error) {
+         console.log(new Error(error))
       }
    }
 
@@ -30,14 +34,17 @@ function App() {
       !access && navigate('/');
    }, [access]);
 
-   function onSearch(id) {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-         if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
+   async function onSearch(id) {
+      try {
+         const response = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+         if (response.data.name) {
+            setCharacters((oldChars) => [...oldChars, response.data]);
          } else {
             window.alert('¡No hay personajes con este ID!');
          }
-      });
+      } catch (error) {
+         console.log(new Error(error))
+      }
    }
 
    const onClose = id => {

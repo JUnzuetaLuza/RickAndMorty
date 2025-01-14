@@ -1,9 +1,22 @@
+.aboutMe {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .aboutMe h1 {
+    all: unset;
+    font-size: 48px;
+    font-weight: 700;
     color: #08BAE3;
     -webkit-text-stroke: 0.05em black;
 }
 
-.aboutMe h5 {
+.aboutMe p {
+    font-size: 36px;
     color: #97ce4c;
+    font-weight: 500;
     -webkit-text-stroke: 0.05em black;
 }

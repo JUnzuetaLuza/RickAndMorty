@@ -5,15 +5,9 @@ import style from "./Nav.module.css"
 export default function Nav(props) {
     return (
         <div className={style.bar}>
-            <NavLink to="/home" >
-                <button>Home</button>
-            </NavLink>
-            <NavLink to="/about" >
-                <button>About</button>
-            </NavLink>
-            <NavLink to="/favorites" >
-                <button>Favorites</button>
-            </NavLink>
+            <NavLink to="/home" > <button>Home</button> </NavLink>
+            <NavLink to="/favorites" > <button>Favorites</button> </NavLink>
+            <NavLink to="/about" > <button>About</button> </NavLink>
             <SearchBar onSearch={props.onSearch} />
         </div>
     )

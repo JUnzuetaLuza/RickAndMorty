@@ -9,14 +9,13 @@ export function Card(props) {
 
    const [isFav, setIsFav] = useState(false);
 
-   const handleFavorite = (evento) => {
-      evento.preventDefault();
+   const handleFavorite = () => {
       if (isFav) {
          setIsFav(false);
-         removeFav(props.id);
+         props.removeFav(props.id);
       } else {
          setIsFav(true);
-         addFav(props);
+         props.addFav(props);
       }
    }
 
@@ -26,7 +25,7 @@ export function Card(props) {
             setIsFav(true);
          }
       });
-   }, [props.myFavorites]);
+   }, [props.myFavorites, props.id]);
    
    return (
       <div className={style.cardTotal}>

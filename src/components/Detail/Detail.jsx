@@ -9,7 +9,7 @@ export default function Detail(){
     const [character, setCharacter] = useState({});
 
     useEffect(() => {
-        axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+        axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
            if (data.name) {
               setCharacter(data);
            } else {
@@ -20,22 +20,23 @@ export default function Detail(){
      }, [id]);
 
     return (
-        <div>
-            <Link to="/home">
-            <button>Go Back</button>
-            </Link>
+        <div className={style.container}>
             <div className={style.totalDetail}>
                 <div className={style.detailImg}>
                     <img src={character.image} alt={character.name}/>
                 </div>
                 <div className={style.detailInfo}>
                     <h1>{character.name}</h1>
-                    <h2>{character.species}</h2>
-                    <h2>{character.gender}</h2>
-                    <h2>{character.status}</h2>
-                    <h2>{character.origin?.name}</h2>
+                    <h2>Specie: {character.species}</h2>
+                    <h2>Gender: {character.gender}</h2>
+                    <h2>Status: {character.status}</h2>
+                    <h2>{character.origin ? `Origin: ${character.origin.name}` : ""}</h2>
                 </div>
             </div>
+            
+            <Link to="/home">
+            <button>Go Back</button>
+            </Link>
         </div>
     );
 }
