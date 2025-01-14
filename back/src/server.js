@@ -1,15 +1,11 @@
-const express = require('express');
-const server = express();
-const morgan = require("morgan")
+const server = require('./app');
 const PORT = 3001;
-const router = require("../src/routes/index")
-const cors = require("cors");
+const { conn } = require("./DB_connection");
 
-server.use(cors());
-server.use(morgan("dev"));
-server.use(express.json());
-server.use("/rickandmorty", router);
-
-server.listen(PORT, () => {
-    console.log("Server raised in port " + PORT);
-})
+conn.sync({ force: true })
+    .then(()=> {
+        server.listen(PORT, async () => {
+            console.log("Server raised in port " + PORT);
+        })
+    })
+    .catch(error => console.log(error.message))
