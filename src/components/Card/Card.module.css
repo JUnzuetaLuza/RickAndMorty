@@ -1,7 +1,7 @@
 .cardTotal {
   margin: 5%;
   align-items: end;
-
+  overflow: hidden;
 }
 
 .card {
@@ -12,7 +12,7 @@
 }
 
 .card:hover .divCard {
-  transform: rotateY(180deg) rotateZ(180deg);
+  transform: rotateY(180deg);
 }
 
 .divCard {
@@ -20,7 +20,7 @@
   width: 100%;
   position: relative;
   transform-style: preserve-3d;
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 .cardFront, .cardBack {
   width: 100%;
@@ -47,16 +47,20 @@
 }
 
 .hName {
-    font-size: 20px;
-    position: absolute;
-    bottom: 2%;
-    left: 2%;
-    background-color: #fcff4f;
-    padding: 0% 5%;
+  font-size: 20px;
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  background-color: #fcff4f;
+  color: #162161;
+  padding: 0% 5%;
 }
 
-.buttonClose {
-    cursor: pointer;
-    background-color: red;
-    border-radius: 2rem;
+.cardTotal button{
+  all: unset;
+  cursor: pointer;
+  color: red;
+  font-weight: 900;
+  -webkit-text-stroke: 0.05em black;
+  margin: 0 2rem;
 }

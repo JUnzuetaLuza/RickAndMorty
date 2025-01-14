@@ -26,7 +26,17 @@ export default function Form(props){
     const handleSubmit = (evento) => {
         evento.preventDefault();
         props.login(userData);
-      }
+    }
+    const handleGuestClick = (evento) => {
+        evento.preventDefault();
+        
+        const guestData = {
+            email: "guest@example.com",
+            password: "guest123",
+        };
+
+        props.login(guestData);
+    }
 
     return (
         <div className={style.container}>
@@ -50,6 +60,7 @@ export default function Form(props){
                 <p className={style.error}>{errors.password?errors.password:null}</p>
 
             <button type="submit">Submit</button>
+            <p className={style.guess} onClick={handleGuestClick}>I'm a guest</p>
         </form>
         </div>
     );

@@ -18,10 +18,16 @@ function App() {
    const navigate = useNavigate();
    const EMAIL = "ft38b@gmail.com";
    const PASSWORD = "326159487";
+   const GEMAIL = "guest@example.com";
+   const GPASSWORD = "guest123";
 
    async function login(userData) {
       try{
          if (userData.password === PASSWORD && userData.email === EMAIL) {
+            setAccess(true);
+            await navigate('/home');
+         }
+         else if (userData.password === GPASSWORD && userData.email === GEMAIL) {
             setAccess(true);
             await navigate('/home');
          }
